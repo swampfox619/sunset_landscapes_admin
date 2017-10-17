@@ -1,0 +1,56 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gallery Images:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Landscape</th>
+      <th>Caption</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @images.each do |image| %>
+      <tr>
+        <td><%= image.landscape_type.capitalize %></td>
+        <td><%= image.title %></td>
+        <td><%= image_tag image.image_url(:admin) %></td>
+        <td><%= link_to 'Show', image %></td>
+        <td><%= link_to 'Edit', edit_image_path(image) %></td>
+        <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<h1>Homepage Slider Images:</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Hero Text</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @images.each do |image|  %>
+      <% if image.hero_text %>
+        <tr>
+          <td><%= image.hero_text %></td>
+          <td><%= image_tag image.image_url(:admin) %></td>
+          <td><%= link_to 'Show', image %></td>
+          <td><%= link_to 'Edit', edit_image_path(image) %></td>
+          <td><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'New Image', new_image_path %>

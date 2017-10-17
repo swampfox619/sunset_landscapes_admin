@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Workspace</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <%= csrf_meta_tags %>
+    <link href="https://fonts.googleapis.com/css?family=Gravitas+One|Ultra" rel="stylesheet">
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <div class="main-container">
+      <header>
+        <div class="logo">
+          <%= link_to (root_path) do %>
+            <%= image_tag('logo', width: '75px', height: '75px') %>
+          <% end %>
+        </div>
+        <ul>
+          <li><%= link_to('Home', root_path) %></li>
+          <li><%= link_to('Gallery', gallery_path) %></li>
+          <li><%= link_to('Services', services_path) %></li>
+          <li><%= link_to('About', about_path) %></li>
+          <li><%= link_to('Contact', contact_path) %></li>
+        </ul>
+      </header>
+      <div class="white-line"></div>
+      <div class="green-band" style="display: flex; justify-content: flex-end">
+        <ul style="list-style: none; padding: .5rem; display: flex; color: white;">
+          <li>Admin Panel:</li>
+          <li><%= link_to('Home', root_path, style: 'color: white; padding: 0 1rem;') %></li>
+          <li><%= link_to('Gallery Images', images_path, style: 'color: white; padding: 0 1rem;') %></li>
+          <li><%= link_to('Services', services_path, style: 'color: white; padding: 0 1rem;') %></li>
+          <li><%= link_to('About', about_path, style: 'color: white; padding: 0 1rem;') %></li>
+          <li><%= link_to('Contact', contact_path, style: 'color: white; padding: 0 1rem;') %></li>
+        </ul>
+        <p class="notice"><%= notice %></p>
+      </div>
+      <%= yield %>
+      <footer>
+        <div class="footer-logo">
+          <%= link_to (root_path) do %>
+            <%= image_tag('logo', width: '75px', height: '75px') %>
+          <% end %>
+        </div>
+        <ul>
+          <li><%= link_to('Home', root_path) %></li>
+          <li><%= link_to('Gallery', gallery_path) %></li>
+          <li><%= link_to('Services', services_path) %></li>
+          <li><%= link_to('About', about_path) %></li>
+          <li><%= link_to('Contact', contact_path) %></li>
+          <li><%= link_to 'Admin Register', new_user_registration_path %></li>
+          <li><%= link_to 'Admin Log In', new_user_session_path %></li>
+        </ul>
+      </footer>
+      <div class="white-line"></div>
+      <div class="green-band"></div>
+    </div>
+    <script src="lightbox.js"></script>
+  </body>
+</html>
+

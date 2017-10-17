@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Landscape Type:</strong>
+  <%= @image.landscape_type %>
+</p>
+
+<p>
+  <strong>Image Caption:</strong>
+  <%= @image.title %>
+</p>
+
+<p>
+  <strong>Part of Homepage Slider?</strong>
+  <%= @image.slider %>
+</p>
+
+<p>
+  <strong>Homepage Slider Text</strong>
+  <%= @image.hero_text %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag @image.image_url(:thumb) %>
+</p>
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', images_path %>

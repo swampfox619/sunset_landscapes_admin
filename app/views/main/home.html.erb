@@ -1,0 +1,107 @@
+<div class="picture-container">
+    <ul class="rslides rslides1">
+        <% @images.each do |image| %>
+            <% if image.slider %>
+                <li>
+                    <div style="height: 500px; background: url(<%=image.image_url(:main) %>)">
+                        <div style="background: rgba(0,0,0,.4); height: 500px; width: 100%">
+                            <h2 class="hero_text"><%= image.hero_text %></h2>
+                        </div>
+                    </div>
+                </li>
+            <% end %>
+        <% end %>
+    </ul>
+</div>
+<div class="green-band"></div>
+<div class="hero-text-container">
+    <div class ="row">
+        <div class="col-sm-6">
+            <h1>We design and install your unique landscape vision</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. 
+            Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis 
+            ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia 
+            arcu eget nulla.<%= link_to('Learn more about us', about_path) %></p>
+        </div>
+        <div class="col-sm-6 gallery-link" data-toggle="tooltip" title="Check out our gallery">
+            <%= link_to(gallery_path) do %>
+                <div class="row">
+                    <%= image_tag('originals/1', width: '33.3%', height: '100') %>
+                    <%= image_tag('originals/2', width: '33.3%', height: '100') %>
+                    <%= image_tag('originals/3', width: '33.3%', height: '100') %>
+                </div>
+                <div class="row">
+                    <%= image_tag('originals/4', width: '33.3%', height: '100') %>
+                    <%= image_tag('originals/5', width: '33.3%', height: '100') %>
+                    <%= image_tag('originals/6', width: '33.3%', height: '100') %>
+                </div>
+                <div class="row">
+                    <%= image_tag('originals/7', width: '33.3%', height: '100') %>
+                    <%= image_tag('originals/8', width: '33.3%', height: '100') %>
+                    <%= image_tag('originals/9', width: '33.3%', height: '100') %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+<div class="testimonials">
+    <div class="testimonials-header">
+        <h2>What People Are Saying</h2>
+    </div>
+    <div class="testimonials-background">
+        <div class="testimonials-container">
+            <h3><span style="font-size: 3rem;">"</span>Installation  choice of 
+            was smooth and professional. Their products are extremely high quality and they never tried to up-sell me on 
+            anything. He was very attuned to my budget and desired outcome for the project. Well done all the way around. I HIGHLY recommend 
+            Sunset for your next project.<br><br><span style="font-size: 1.5rem;">-Nathan S. in Chula Vista</span></h3>
+        </div>
+    </div>
+</div>
+<div id="service-section">
+    <div id="service-heading">
+        <h2>Our Services</h2>
+    </div>
+    <div class="services row">
+        <div class="col-sm-3 each-service">
+            <h3>Traditional <br> Landscaping</h3>
+            <%= image_tag('/assets/originals/19') %>
+            <p>Lorem ipsum dolor sit amet, eu est brute alterum principes, te pri dicat dicant commodo. Paulo tincidunt an vis.
+            <%= link_to('Learn More', services_path) %></p>
+        </div>
+        <div class="col-sm-3 each-service">
+            <h3>Pergolas &<br> Arbors</h3>
+            <%= image_tag('/assets/originals/11') %>
+            <p>Lorem ipsum dolor sit amet, eu est brute alterum principes, te pri dicat dicant commodo. Paulo tincidunt an vis.
+            <%= link_to('Learn More', services_path) %></p>
+        </div>
+        <div class="col-sm-3 each-service">
+            <h3>Drought<br>Tolerant</h3>
+            <%= image_tag('/assets/originals/22') %>
+            <p>Lorem ipsum dolor sit amet, eu est brute alterum principes, te pri dicat dicant commodo. Paulo tincidunt an vis.
+            <%= link_to('Learn More', services_path) %></p>
+        </div>
+        <div class="col-sm-3 each-service">
+            <h3>Outdoor<br> Living</h3>
+            <%= image_tag('/assets/originals/16') %>
+            <p>Lorem ipsum dolor sit amet, eu est brute alterum principes, te pri dicat dicant commodo. Paulo tincidunt an vis.
+            <%= link_to('Learn More', services_path) %></p>
+        </div>
+    </div>
+</div>
+<% if Date.today.mon == 3 || Date.today.mon == 4 || Date.today.mon == 5 %> 
+    <%= render 'layouts/spring' %>
+<% end %>
+<% if Date.today.mon == 6 || Date.today.mon == 7 || Date.today.mon == 8 %> 
+    <%= render 'layouts/summer' %>
+<% end %>
+<% if Date.today.mon == 9 || Date.today.mon == 10 || Date.today.mon == 11 %> 
+    <%= render 'layouts/fall' %>
+<% end %>
+<% if Date.today.mon == 12 || Date.today.mon == 1 || Date.today.mon == 2 %> 
+    <%= render 'layouts/winter' %>
+<% end %>
+<%= link_to(contact_path, id: 'contact') do %>
+    <div class="contact-link">
+            <h2>Take the Next Step Now:</h2>
+    </div>
+<% end %>

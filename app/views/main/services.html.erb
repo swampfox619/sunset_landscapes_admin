@@ -1,0 +1,140 @@
+<div class="content-container">
+    <div class="services-container">
+        <div class="services-main">
+            <h1>Services</h1>
+            <div class="tabs">
+                <ul class="tab-links">
+                    <li class="active"><a href="#tab1">Traditional Landscaping</a></li>
+                    <li><a href="#tab2">Pergolas & Arbors</a></li>
+                    <li><a href="#tab3">Drought Tolerant</a></li>
+                    <li><a href="#tab4">Outdoor Living</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div id="tab1" class="tab active">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h3>Traditional doesn't have to be boring...</h3>
+                                <p>We pride ourselves on creative designs for even the most traditional landscapes.  We can also incorporate water-efficient
+                                solutions without going completely drought-tolerant.  From sod installation to fences, gardens, and plantings, we can
+                                help come up with your ideal landscape for your unique situation.</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <%= image_tag('originals/29.jpg', width: '100%') %>    
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <%= image_tag('originals/2.jpg', width: '100%') %>      
+                            </div>
+                            <div class="col-sm-6">
+                                <h3>Quality Counts</h3>
+                                <p>Every single one of our landscape installations comes with:</p>
+                                <ul>
+                                    <li>90 day plant guarantee</li>
+                                    <li>100% satisfaction guarantee</li>
+                                    <li>3 year workmanship warranty</li>
+                                    <li>Fully automated efficient-irrigation system</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="services-gallery-link">
+                            <%= link_to('Next Up: Check out our Gallery', gallery_path) %>    
+                        </div>
+                    </div>
+                    <div id="tab2" class="tab">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h3>Nothing says relaxation like some shade...</h3>
+                                <p>Incorporate a pergola, or arbor into your next redesign project.  The options are almost unlimited.  From simple
+                                screen covered patio covers, to multi-layered pergolas which are works of art, nothing is a more natural fit in your backyard
+                                than wood.  </p>
+                            </div>
+                            <div class="col-sm-6">
+                                <%= image_tag('originals/11.jpg', width: '100%') %>    
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <%= image_tag('originals/35.jpg', width: '100%') %>      
+                            </div>
+                            <div class="col-sm-6">
+                                <h3>Quality Counts</h3>
+                                <p>Superior materials make for superior results.  Our pergolas and arbors are made with 100% Western Red Cedar.
+                                Every piece is double coated in water-resistant stain, and every corbel in our designs is cut by hand.</p>
+                            </div>
+                        </div>
+                        <div class="services-gallery-link">
+                            <%= link_to('Next Up: Check out our Gallery', gallery_path) %>    
+                        </div>
+                    </div>
+                    <div id="tab3" class="tab">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h3>Saving money never looked so good...</h3>
+                                <p>Our clients save an average of 50% on their water after installing a drought-tolerant landscape.  From native-plants and low-water
+                                plants like Rosemary and Agave to efficient irrigation with smart sensors and drip lines, it's never been easier to have a beautiful,
+                                maintenance-free landscape.</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <%= image_tag('originals/17.jpg', width: '100%') %>    
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <%= image_tag('originals/24.jpg', width: '100%') %>      
+                            </div>
+                            <div class="col-sm-6">
+                                <h3>Quality Counts</h3>
+                                <p>Every single one of our drought-tolerant installations comes with:</p>
+                                <ul>
+                                    <li>90 day plant guarantee</li>
+                                    <li>Stabilized decomposed granite to prevent rutting</li>
+                                    <li>3 year workmanship warranty</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="services-gallery-link">
+                            <%= link_to('Next Up: Check out our Gallery', gallery_path) %>    
+                        </div>
+                    </div>
+                    <div id="tab4" class="tab">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h3>We're great at everything, but this is our favorite...</h3>
+                                <p>Creating outdoor spaces in sunny San Diego is the true pride of our work.  Outdoor living spaces, including firepits,
+                                BBQs, and decks, not only serve as a great way to enjoy your family and friends, they also add to your property value!</p>
+                            </div>
+                            <div class="col-sm-6">
+                                <%= image_tag('originals/8.jpg', width: '100%') %>    
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <%= image_tag('originals/9.jpg', width: '100%') %>      
+                            </div>
+                            <div class="col-sm-6">
+                                <h3>Quality Counts</h3>
+                                <p>We only use the highest quality products for our outdoor living projects, including:</p>
+                                <ul>
+                                    <li>Belgard Pavers</li>
+                                    <li>Lion Barbarques</li>
+                                    <li>Hadco Lights</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="services-gallery-link">
+                            <%= link_to('Next Up: Check out our Gallery', gallery_path) %>    
+                        </div>
+                    </div>                        
+                </div>
+            </div>
+        </div>
+    </div>
+    <%= link_to(contact_path, id: 'contact') do %>
+        <div class="contact-link">
+                <h2>Take the Next Step Now:</h2>
+        </div>
+    <% end %>
+</div>
+
+

@@ -1,0 +1,29 @@
+<%= form_for(image, :html => {:multipart => true }) do |f| %>
+  <div>
+    <%= f.label :landscape_type %>
+    <%= f.select :landscape_type, collection: Image.landscape_types.keys %>
+    <p>NOTE: This selection will determine what group this photo is linked to when a user clicks on a specific set, from the options along the top
+    of the gallery.</p>
+  </div>
+  <div>
+    <%= f.label 'Caption' %>
+    <%= f.text_field :title, size: 100 %>
+    <p>NOTE: This is the caption that will be displayed when the large image photo is displayed.</p>
+  </div>
+  <div>
+    <%= f.label 'Add an image to the homepage gallery' %>
+    <%= f.check_box :slider %>
+  </div>
+  <div>
+    <%= f.label 'Hero Text' %>
+    <%= f.text_field :hero_text, size: 100 %>
+    <p>NOTE: This is the caption that will be displayed when the large image photo is displayed.</p>
+  </div>
+  <div>
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+  <div>
+    <%= f.submit 'Save' %>
+  </div>
+<% end %>

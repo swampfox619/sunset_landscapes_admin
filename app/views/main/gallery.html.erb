@@ -1,0 +1,21 @@
+<div class="content-container">
+    <div class="gallery-container">
+        <div class="gallery">
+                <h1>About Us</h1>
+                <ul id="gallery-list">
+                    <li id="all">All</li>
+                    <li id="landscaping">Traditional Landscaping</li>
+                    <li id="pergola">Pergolas & Arbors</li>
+                    <li id="drought">Drought Tolerant</li>
+                    <li id="outdoor">Outdoor Living</li>
+                </ul>
+                <div class="gallery-images-container">
+                    <% @images.each do |image| %>
+                        <a class=<%= image.landscape_type %> data-lightbox='all' href='<%=image.image_url %>' data-title='<%=image.title %>'>
+                            <%= image_tag image.image_url(:thumb) %>
+                        </a>
+                    <% end %>
+                </div>
+        </div>        
+    </div>
+</div>    
