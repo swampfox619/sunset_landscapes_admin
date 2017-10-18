@@ -2,9 +2,11 @@ class MainController < ApplicationController
 
   def home
     @images = Image.all
+    @testimonials = Testimonial.all
   end
 
   def about
+    @testimonials = Testimonial.all
   end
 
   def contact

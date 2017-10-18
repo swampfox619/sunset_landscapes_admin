@@ -43,10 +43,14 @@
         </div>
         <div class="testimonials-background">
             <div class="testimonials-container">
-                <h3><span style="font-size: 3rem;">"</span>Installation  choice of 
-                was smooth and professional. Their products are extremely high quality and they never tried to up-sell me on 
-                anything. He was very attuned to my budget and desired outcome for the project. Well done all the way around. I HIGHLY recommend 
-                Sunset for your next project.<br><br><span style="font-size: 1.5rem;">-Nathan S. in Chula Vista</span></h3>
+                <ul class="testimonial-slider" style="list-style: none;">
+                <% @testimonials.each do |testimonial| %>
+                    <li>
+                        <h3><span style="font-size: 3rem;">"</span><%= testimonial.description %>
+                        <br><br><span style="font-size: 1.5rem;">-<%= testimonial.title%></span></h3>
+                    </li>
+                <% end %>
+                </ul>
             </div>
         </div>
     </div>

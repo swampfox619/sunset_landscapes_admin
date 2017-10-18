@@ -1,6 +1,4 @@
-<h1>Editing Image</h1>
-
-<%= render 'form', image: @image %>
-
-<%= link_to 'Show', @image %> |
-<%= link_to 'Back', images_path %>
+<div style="background: #dddddd; padding: 1rem; ">
+    <h1>Editing Image # <%= @image.id %></h1>
+    <%= render 'form', image: @image %>
+</div>

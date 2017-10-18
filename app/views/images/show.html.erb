@@ -1,29 +1,33 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Landscape Type:</strong>
-  <%= @image.landscape_type %>
-</p>
-
-<p>
-  <strong>Image Caption:</strong>
-  <%= @image.title %>
-</p>
-
-<p>
-  <strong>Part of Homepage Slider?</strong>
-  <%= @image.slider %>
-</p>
-
-<p>
-  <strong>Homepage Slider Text</strong>
-  <%= @image.hero_text %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= image_tag @image.image_url(:thumb) %>
-</p>
-
-<%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
+<div id="notice"><%= notice %></div>
+<div style="width: 100%; background: #dddddd; padding: 1rem; display: flex; min-height: 600px">
+  <div style="flex: 2; padding-right: 2rem; ">
+      <h2 style="padding-bottom: 1rem;">Image Information: Image # <%= @image.id %></h2>
+      <div style="padding-bottom: 1rem;">
+        <strong>Landscape Type:</strong>
+        <%= @image.landscape_type.capitalize %>
+      </div>
+      <div style="padding-bottom: 1rem;">
+        <strong>Image Caption:</strong>
+        <%= @image.title %>
+      </div>
+      <div style="padding-bottom: 1rem;">
+        <strong>On Homepage Slider?: </strong>
+        <%= @image.slider? %>
+      </div>
+      <div style="padding-bottom: 1rem;">
+        <strong>Homepage Slider Text:</strong>
+        <% if @image.hero_text != nil %>
+          <%= @image.hero_text %>
+        <% else %>
+          You haven't added any text. Click the 'Edit' button below to add text.
+        <% end %>
+      </div>
+      <div>
+        <%= link_to 'Edit', edit_image_path(@image), class: 'btn btn-primary' %>
+        <%= link_to 'Back', images_path, class: 'btn btn-primary' %>
+      </div>
+  </div>
+  <div style="flex: 3">
+     <%= image_tag @image.image_url(:main), style: 'width: 100%' %> 
+  </div>
+</div>

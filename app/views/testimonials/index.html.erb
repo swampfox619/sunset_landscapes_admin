@@ -1,0 +1,22 @@
+<div style="width: 100%; background: #dddddd; padding: 1rem; min-height: 600px">
+  <div style="display: flex; align-items: center;">
+    <h1>Testimonials</h1>
+    <div style="padding-left: 2rem;">
+      <%= link_to 'New Testimonial', new_testimonial_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+  <div style="display: flex; border-bottom: 2px solid black;">
+    <div style="width: 20%; padding: .5rem; font-weight: 700;">Client Name:</div>
+    <div style="width: 50%; padding: .5rem; font-weight: 700;">Client Testimonial:</div>
+    <div style="width: 30%; padding: .5rem; font-weight: 700;">Actions:</div>
+  </div>
+  <% @testimonials.each do |testimonial| %>
+    <div style="display: flex; border-bottom: 1px solid black;">
+      <div style="width: 20%; padding: .5rem; "><%= testimonial.title %></div>
+      <div style="width: 50%; padding: .5rem; "><%= testimonial.description %></div>
+      <div style="width: 10%; padding: .5rem; "><%= link_to 'Show', testimonial %></div>
+      <div style="width: 10%; padding: .5rem; "><%= link_to 'Edit', edit_testimonial_path(testimonial) %></div>
+      <div style="width: 10%; padding: .5rem; "><%= link_to 'Destroy', testimonial, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    </div>
+  <% end %>
+</div>
