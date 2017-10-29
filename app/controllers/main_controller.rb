@@ -3,6 +3,8 @@ class MainController < ApplicationController
   def home
     @images = Image.all
     @testimonials = Testimonial.all
+    @specials = Special.all
+    @special = Special.last
   end
 
   def about
@@ -18,4 +20,5 @@ class MainController < ApplicationController
 
   def services
   end
+  
 end

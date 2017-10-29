@@ -1,0 +1,25 @@
+<div class="admin-index">
+  <div class="header">
+    <h1>Specials</h1>
+    <div>
+      <%= link_to 'New Special', new_special_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+  <div class="table-headers">
+    <div style="width: 10%;">Special Month:</div>
+    <div style="width: 20%;">Special Title:</div>
+    <div style="width: 40%;">Special Description:</div>
+    <div style="width: 30%;">Actions:</div>
+  </div>
+  <% @specials.each do |special| %>
+    <div class="table-rows">
+      <div style="width: 10%;"><%= special.month %></div>
+      <div style="width: 20%;"><%= special.title %></div>
+      <div style="width: 40%;"><%= special.description %></div>
+      <div style="width: 10%;"><%= link_to 'Show', special %></div>
+      <div style="width: 10%;"><%= link_to 'Edit', edit_special_path(special) %></div>
+      <div style="width: 10%;"><%= link_to 'Destroy', special, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    </div>
+  <% end %>
+</div>
+

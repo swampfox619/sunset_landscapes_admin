@@ -18,6 +18,12 @@
 @import "font-awesome";
 @import 'lightbox';
 
+a {
+    &:hover{
+        background: none;
+    }
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -158,6 +164,11 @@ $green: rgb(75, 191, 30);
             }
             .gallery-link{
                 opacity: .7;
+                a{
+                    &:hover{
+                        background: none;
+                    }
+                }
             }
         }
         
@@ -271,6 +282,7 @@ $green: rgb(75, 191, 30);
         .gallery{
             background: rgba(0,0,0,.9);
             width: 100%;
+            min-height: 960px;
             height: 100%;
             padding-bottom: 1rem;
             h1{
@@ -287,8 +299,10 @@ $green: rgb(75, 191, 30);
                 }
             }
             .gallery-images-container{
-                text-align: center;
+                display: flex;
+                justify-content: center;
                 img{
+                    padding: .25rem;
                     max-height: 200px;
                     max-width: 200px;
                 }
@@ -445,7 +459,7 @@ $green: rgb(75, 191, 30);
     }
  
     .tab-links li {
-        margin-right: 1rem;
+        margin-right: .5rem;
         float:left;
         list-style:none;
     }

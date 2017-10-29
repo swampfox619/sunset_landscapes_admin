@@ -1,14 +1,13 @@
-<div id="notice"><%= notice %></div>
-<div style="width: 100%; background: #dddddd; padding: 1rem; min-height: 600px">
-  <h2 style="border-bottom: 2px solid black; ">Testimonial # <%= @testimonial.id %> Information:</h2>
-  <div style="flex: 2; padding-right: 2rem; ">
-    <div style="padding: 2rem 0;">
+<div class="admin-show">
+  <h2>Testimonial # <%= @testimonial.id %> Information:</h2>
+  <div class="content">
+    <div>
       <strong>Client Name:</strong>
-      <%= @testimonial.title.capitalize %>
+      <%= @testimonial.title %>
     </div>
-    <div style="padding-bottom: 1rem;">
+    <div>
       <strong>Client Testimonial:</strong>
-      <%= @testimonial.description.capitalize %>
+      <%= @testimonial.description %>
     </div>
     <div>
       <%= link_to 'Edit', edit_testimonial_path(@testimonial), class: 'btn btn-primary' %>

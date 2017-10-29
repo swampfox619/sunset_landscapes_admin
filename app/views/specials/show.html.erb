@@ -1,0 +1,21 @@
+<div class="admin-show">
+  <h2>Special # <%= @special.id %> Information:</h2>
+  <div class="content">
+    <div>
+      <strong>Special Title:</strong>
+      <%= @special.title %>
+    </div>
+    <div>
+      <strong>Special Description:</strong>
+      <%= @special.description %>
+    </div>
+    <div>
+      <strong>SpecialMonth:</strong>
+      <%= @special.description %>
+    </div>
+    <div>
+      <%= link_to 'Edit', edit_special_path(@special), class: 'btn btn-primary' %>
+      <%= link_to 'Back', specials_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

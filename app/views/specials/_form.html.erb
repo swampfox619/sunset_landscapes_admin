@@ -1,0 +1,30 @@
+<%= form_for(special) do |f| %>
+  <div class="form-field">
+    <%= f.label 'Special Title:' %><br>
+    <div <div class="form-content">
+      <%= f.text_field :title, size: 50 %>
+    </div>
+  </div>
+  <div class="form-field">
+    <%= f.label 'Special Description:' %>
+    <div <div class="form-content">
+      <%= f.text_area :description, :cols => 75, :rows => 2 %>
+    </div>
+  </div>
+  <div class="form-field">
+    <%= f.label 'Special Color:' %>
+    <div class="form-content">
+      <%= f.select :color, options_for_select([
+          ['Light Blue', {:style => "background-color: rgb(63, 169, 245)"}], 
+          ['Yellow', {:style => "background-color: rgb(255, 242, 0)"}],
+          ['Orange', {:style => "background-color: rgb(247, 147, 30)"}],
+          ['Brown', {:style => "background-color: rgb(178, 115, 10)"}],
+          ['Green', {:style => "background-color:rgb(75, 191, 30)"}]
+      ]) %>
+    </div>
+  </div>
+  <div class="form-field">
+    <%= f.submit 'Save', class: 'btn btn-primary' %>
+    <%= link_to 'Back', specials_path, class: 'btn btn-primary' %>
+  </div>
+<% end %>

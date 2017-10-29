@@ -1,17 +1,17 @@
 <%= form_for(testimonial, :html => {:multipart => true }) do |f| %>
-  <div style="padding-bottom: 1rem;">
-    <%= f.label 'Client Name:', style: 'font-weight: 700' %><br>
-    <div style="padding-left: 2rem;">
+  <div class="form-field">
+    <%= f.label 'Client Name:' %><br>
+    <div <div class="form-content">
       <%= f.text_field :title, size: 50 %>
     </div>
   </div>
-  <div style="padding-bottom: 1rem;">
-    <%= f.label 'Client Testimonial:', style: 'font-weight: 700' %>
-    <div style="padding-left: 2rem; width: 100%;">
+  <div class="form-field">
+    <%= f.label 'Client Testimonial:' %>
+    <div <div class="form-content">
       <%= f.text_area :description, :cols => 75, :rows => 5 %>
     </div>
   </div>
-  <div style="padding-bottom: 1rem;">
+  <div class="form-field">
     <%= f.submit 'Save', class: 'btn btn-primary' %>
     <%= link_to 'Back', testimonials_path, class: 'btn btn-primary' %>
   </div>

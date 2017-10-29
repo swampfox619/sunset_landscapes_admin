@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :specials
   resources :testimonials
   resources :images
   devise_for :users

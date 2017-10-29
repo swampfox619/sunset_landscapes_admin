@@ -1,36 +1,38 @@
-<div style="width: 100%; background: #dddddd; padding: 1rem; ">
+<div class="admin-index">
   <p id="notice"><%= notice %></p>
-  <div style="padding-bottom: 2rem;">
-    <h2 style="display: inline;">Gallery Images:</h2>
-    <span style="padding-left: 2rem;"><%= link_to 'Add Photo', new_image_path, class: 'btn btn-primary' %></span>
+  <div class="header">
+    <h2>Gallery Images:</h2>
+    <div>
+      <%= link_to 'Add Photo', new_image_path, class: 'btn btn-primary' %>
+    </div>
   </div>
-  <ul style="list-style: none; display: flex;">
+  <ul>
       <li><strong>Filter Images by Category:</strong></li>
-      <li id="all" style="padding-left: 1rem; cursor: pointer;">All</li>
+      <li id="all">All</li>
       <% Image.landscape_types.keys.each do |type| %>
-        <li id=<%=type %> style="padding-left: 1rem; cursor: pointer;"><%= type.capitalize %></li>
+        <li id=<%=type %>><%= type.capitalize %></li>
       <% end %>
   </ul>
     <div>
-      <div style="display: flex;">
-        <div style="display: flex; align-items: center; justify-content: center; width: 12%; font-size: 1.25rem; border: 1px solid black; padding: .5rem;">Gallery Category:</div>
-        <div style="display: flex; align-items: center; justify-content: center; width: 25%; font-size: 1.25rem; border: 1px solid black; padding: .5rem;">Gallery Caption:</div>
-        <div style="display: flex; align-items: center; justify-content: center; width: 16%; font-size: 1.25rem; border: 1px solid black; padding: .5rem;">Image Thumb:</div>
-        <div style="display: flex; align-items: center; justify-content: center; width: 47%;  font-size: 1.25rem; border: 1px solid black; padding: .5rem;">Actions:</div>
+      <div class="table-headers">
+        <div style="width: 12%;">Gallery Category:</div>
+        <div style="width: 25%;">Gallery Caption:</div>
+        <div style="width: 16%;">Image Thumb:</div>
+        <div style="width: 47%;">Actions:</div>
       </div>
       <% @images.each do |image| %>
-      <div class="<%=image.landscape_type %>" style="display: flex;">
-        <div style="display: flex; align-items: center; justify-content: center; width: 12%; border: 1px solid black; padding: .5rem;"><%= image.landscape_type.capitalize %></div>
+      <div class="<%=image.landscape_type %> table-rows" >
+        <div style="width: 12%;"><%= image.landscape_type.capitalize %></div>
         <% if image.title? %>
-          <div style="display: flex; align-items: center; justify-content: center; width: 25%; border: 1px solid black; padding: .5rem;"><%= image.title %></div>
+          <div style="width: 25%;"><%= image.title %></div>
         <% else %>
-          <div style="display: flex; align-items: center; justify-content: center; width: 25%; border: 1px solid black; padding: .5rem;">No text to display.  Add text in the 'Edit' section for the selected photo.</div>
+          <div style="width: 25%;">No text to display.  Add text in the 'Edit' section for the selected photo.</div>
         <% end %>
-        <div style="display: flex; align-items: center; justify-content: center; width: 16%; border: 1px solid black; padding: .5rem;"><%= image_tag image.image_url(:admin)  %></div>
-        <div style="display: flex; align-items: center; justify-content: center; width: 8%; border: 1px solid black; padding: .5rem;"><%= link_to 'Show', image %></div>
-        <div style="display: flex; align-items: center; justify-content: center; width: 8%; border: 1px solid black; padding: .5rem;"><%= link_to 'Edit', edit_image_path(image) %></div>
-        <div style="display: flex; align-items: center; justify-content: center; width: 8%; border: 1px solid black; padding: .5rem;"><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' }  %></div>
-        <div style="display: flex; align-items: center; justify-content: center; width: 23%; border: 1px solid black; padding: .5rem;">            
+        <div style="width: 16%;"><%= image_tag image.image_url(:admin)  %></div>
+        <div style="width: 8%;"><%= link_to 'Show', image %></div>
+        <div style="width: 8%;"><%= link_to 'Edit', edit_image_path(image) %></div>
+        <div style="width: 8%;"><%= link_to 'Destroy', image, method: :delete, data: { confirm: 'Are you sure?' }  %></div>
+        <div style="width: 23%;">            
           <%= form_for image do |t| %>
            <%= t.hidden_field :slider, :value=>true%>
            <%= t.submit "Add to Homepage Slider" %>
@@ -39,23 +41,25 @@
       </div>
       <% end %>
     </div>
-  <h2 style="padding: 2rem 0;">Homepage Slider Images:</h2>
-    <div style="display: flex; justify-content: center; align-items: center; font-size: 1.25rem;">
-      <div style="display: flex; justify-content: center; align-items: center; border: 1px solid black; padding: .5rem; width: 41%;">Slider Text</div>
-      <div style="display: flex; justify-content: center; align-items: center; border: 1px solid black; padding: .5rem; width: 20%;">Slider Image</div>
-      <div style="display: flex; justify-content: center; align-items: center; border: 1px solid black; padding: .5rem; width: 39%;">Actions</div>
+    <div class="header second-header">
+      <h2>Homepage Slider Images:</h2>  
+    </div>
+    <div class="table-headers">
+      <div style="width: 37%;">Slider Text</div>
+      <div style="width: 16%;">Slider Image</div>
+      <div style="width: 47%;">Actions</div>
     </div>  
     <div>
       <% @images.each do |image|  %>
         <% if image.slider %>
-        <div style="display: flex;">
+        <div class="table-rows">
           <% if image.hero_text? %>
-            <div style="display: flex; align-items: center; justify-content: center; width: 41%; border: 1px solid black; padding: .5rem;"><%= image.hero_text%></div>
+            <div style="width: 37%;"><%= image.hero_text%></div>
           <% else %>
-            <div style="display: flex; align-items: center; justify-content: center; width: 41%; border: 1px solid black; padding: .5rem;">No text to display.  Add text in the 'Edit' section for the selected photo.</div>
+            <div style="width: 37%;">No text to display.  Add text in the 'Edit' section for the selected photo.</div>
           <% end %>
-          <div style="display: flex; align-items: center; justify-content: center; width: 20%; border: 1px solid black; padding: .5rem;"><%= image_tag image.image_url(:admin) %></div>
-          <div style="display: flex; align-items: center; justify-content: center; width: 39%; border: 1px solid black; padding: .5rem;">
+          <div style="width: 16%;"><%= image_tag image.image_url(:admin) %></div>
+          <div style="width: 47%;">
             <%= form_for image do |t| %>
               <%= t.hidden_field :slider, :value=>false %>
               <%= t.submit "Remove from Homepage Slider" %>
