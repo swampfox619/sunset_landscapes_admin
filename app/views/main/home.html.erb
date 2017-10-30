@@ -95,7 +95,7 @@
     </div>
 </div>
 <% if special_month? %>
-        <div class="special">
+        <div class="special" style="background: <%= @special.color %>">
             <h2><%= @special.month.capitalize %> Special</h2>
             <h4><%= @special.description %></h4>
         </div> 

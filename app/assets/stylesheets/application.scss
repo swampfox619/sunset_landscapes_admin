@@ -53,12 +53,43 @@ $green: rgb(75, 191, 30);
         header, footer{
             padding: 1rem;
             background: $light-blue;
-            ul{
+            .nav{
                 display: flex;
+                justify-content: flex-start;
                 list-style: none;
                 color: white;
                 li{
-                    padding: 0 2rem;
+                    padding-right: 2rem;
+                    a{
+                        color: white;
+                    }
+                }
+            }
+            .admin-nav{
+                border: 1px solid white;
+                border-radius: 10px;
+                position: fixed;
+                left: 2rem;
+                top: 4rem;
+                z-index: 1000;
+                background: $orange;
+                padding: .5rem;
+                color: white;
+                #admin-nav-header{
+                    h5{
+                        margin-bottom: 0;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                }
+                ul{
+                    margin: 0;
+                    list-style: none;
+                    li{
+                        padding-top: 1rem;
+                        padding-left: none;
+                    }
                     a{
                         color: white;
                     }
@@ -80,20 +111,22 @@ $green: rgb(75, 191, 30);
         header{
             display: flex;
             align-items: center;
+            justify-content: flex-end;
             .logo{
                 flex: 1
             }
-            ul{
-                flex: 2;
+            .nav{
+                flex: 4;
             }
-            
         }
         .white-line{
             height: 5px;
             background: white;
         }
     }
-
+.notice, .alert{
+    color: white;
+}
 // Homepage
 
     // Hero Picture

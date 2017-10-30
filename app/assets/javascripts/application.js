@@ -21,6 +21,7 @@
 // Transitions for testimonials
 $(document).on("turbolinks:load", function(){
     animateTestimonials();
+    collapseAdmin();
 });
 
 function animateTestimonials() {
@@ -36,3 +37,9 @@ function animateTestimonials() {
     };
     loop();
 };
+
+function collapseAdmin(){
+    $(".admin-panel-hide").on("click", function(){
+        $('.admin-list').toggle();
+    })
+}
