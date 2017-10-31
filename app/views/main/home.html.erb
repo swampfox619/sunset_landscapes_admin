@@ -1,107 +1,109 @@
-<div class="picture-container">
-    <ul class="rslides rslides1">
-        <% @images.each do |image| %>
-            <% if image.slider %>
-                <li>
-                    <div style="height: 500px; background: url(<%=image.image_url(:main) %>)">
-                        <div style="background: rgba(0,0,0,.4); height: 500px; width: 100%">
-                            <h2 class="hero_text"><%= image.hero_text %></h2>
+<div class="content-container">
+    <div class="picture-container">
+        <ul class="rslides rslides1">
+            <% @images.each do |image| %>
+                <% if image.slider %>
+                    <li>
+                        <div style="height: 500px; background: url(<%=image.image_url(:main) %>)">
+                            <div style="background: rgba(0,0,0,.4); height: 500px; width: 100%">
+                                <h2 class="hero_text"><%= image.hero_text %></h2>
+                            </div>
                         </div>
+                    </li>
+                <% end %>
+            <% end %>
+        </ul>
+    </div>
+    <div class="green-band"></div>
+    <div class="hero-text-container">
+        <div class ="row">
+            <div class="col-sm-6">
+                <h1>We design and install your unique landscape vision</h1>
+                <p>We know a dream landscape can sometimes seem out of reach.  We know you probably have had bad experiences with contractors.
+                We know home upgrades can be expensive.  At Sunset Landscapes, we pride ourselves on quality-work, at fair-prices, with superior
+                service.  That's not a gimmick.  That's a neighbor's promise.<%= link_to('Learn more about us', about_path) %></p>
+            </div>
+            <div class="col-sm-6 gallery-link">
+                <%= link_to(gallery_path) do %>
+                    <div class="row">
+                        <%= image_tag('originals/1', width: '33.3%', height: '100') %>
+                        <%= image_tag('originals/2', width: '33.3%', height: '100') %>
+                        <%= image_tag('originals/3', width: '33.3%', height: '100') %>
                     </div>
-                </li>
-            <% end %>
-        <% end %>
-    </ul>
+                    <div class="row">
+                        <%= image_tag('originals/4', width: '33.3%', height: '100') %>
+                        <%= image_tag('originals/5', width: '33.3%', height: '100') %>
+                        <%= image_tag('originals/6', width: '33.3%', height: '100') %>
+                    </div>
+                    <div class="row">
+                        <%= image_tag('originals/7', width: '33.3%', height: '100') %>
+                        <%= image_tag('originals/8', width: '33.3%', height: '100') %>
+                        <%= image_tag('originals/9', width: '33.3%', height: '100') %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <div class="testimonials">
+        <div class="testimonials-header">
+            <h2>What People Are Saying</h2>
+        </div>
+        <div class="testimonials-background">
+            <div class="testimonials-container">
+                <ul class="testimonial-slider" style="list-style: none;">
+                <% @testimonials.each do |testimonial| %>
+                    <li>
+                        <h3><span style="font-size: 3rem;">"</span><%= testimonial.description %>
+                        <br><br><span style="font-size: 1.5rem;">-<%= testimonial.title%></span></h3>
+                    </li>
+                <% end %>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="service-section">
+        <div id="service-heading">
+            <h2>Our Services</h2>
+        </div>
+        <div class="services row">
+            <div class="col-sm-3 each-service">
+                <h3>Traditional <br> Landscaping</h3>
+                <%= image_tag('/assets/originals/19') %>
+                <p>From sod, to irrigation systems, to vegetable gardens and tree plantings, we've got something
+                for even the most ardent outdoor traditionalist.
+                <%= link_to('Learn More', services_path) %></p>
+            </div>
+            <div class="col-sm-3 each-service">
+                <h3>Pergolas &<br> Arbors</h3>
+                <%= image_tag('/assets/originals/11') %>
+                <p>Nothing accents and makes your landscape truly inviting like custom woodwork in the form of arbors, trellis', and pergolas.
+                <%= link_to('Learn More', services_path) %></p>
+            </div>
+            <div class="col-sm-3 each-service">
+                <h3>Drought<br>Tolerant</h3>
+                <%= image_tag('/assets/originals/22') %>
+                <p>From native plants, to decomposed granite, dry creek beds and efficient irrigation.  Going low-maintenance has never meant
+                sacrificing beauty.
+                <%= link_to('Learn More', services_path) %></p>
+            </div>
+            <div class="col-sm-3 each-service">
+                <h3>Outdoor<br> Living</h3>
+                <%= image_tag('/assets/originals/16') %>
+                <p>The capstone of any outdoor project.  Firepits, paver walkways, paver patios, and built in BBQ areas make any outdoor area your 
+                go-to spot to entertain and unwind.
+                <%= link_to('Learn More', services_path) %>
+            </div>
+        </div>
+    </div>
+    <% if special_month? %>
+            <div class="special" style="background: <%= @special.color %>">
+                <h2><%= @special.month.capitalize %> Special</h2>
+                <h4><%= @special.description %></h4>
+            </div> 
+    <% end %>
+    <%= link_to(contact_path, id: 'contact') do %>
+        <div class="contact-link">
+                <h2>Take the Next Step Now:</h2>
+        </div>
+    <% end %>
 </div>
-<div class="green-band"></div>
-<div class="hero-text-container">
-    <div class ="row">
-        <div class="col-sm-6">
-            <h1>We design and install your unique landscape vision</h1>
-            <p>We know a dream landscape can sometimes seem out of reach.  We know you probably have had bad experiences with contractors.
-            We know home upgrades can be expensive.  At Sunset Landscapes, we pride ourselves on quality-work, at fair-prices, with superior
-            service.  That's not a gimmick.  That's a neighbor's promise.<%= link_to('Learn more about us', about_path) %></p>
-        </div>
-        <div class="col-sm-6 gallery-link">
-            <%= link_to(gallery_path) do %>
-                <div class="row">
-                    <%= image_tag('originals/1', width: '33.3%', height: '100') %>
-                    <%= image_tag('originals/2', width: '33.3%', height: '100') %>
-                    <%= image_tag('originals/3', width: '33.3%', height: '100') %>
-                </div>
-                <div class="row">
-                    <%= image_tag('originals/4', width: '33.3%', height: '100') %>
-                    <%= image_tag('originals/5', width: '33.3%', height: '100') %>
-                    <%= image_tag('originals/6', width: '33.3%', height: '100') %>
-                </div>
-                <div class="row">
-                    <%= image_tag('originals/7', width: '33.3%', height: '100') %>
-                    <%= image_tag('originals/8', width: '33.3%', height: '100') %>
-                    <%= image_tag('originals/9', width: '33.3%', height: '100') %>
-                </div>
-            <% end %>
-        </div>
-    </div>
-</div>
-<div class="testimonials">
-    <div class="testimonials-header">
-        <h2>What People Are Saying</h2>
-    </div>
-    <div class="testimonials-background">
-        <div class="testimonials-container">
-            <ul class="testimonial-slider" style="list-style: none;">
-            <% @testimonials.each do |testimonial| %>
-                <li>
-                    <h3><span style="font-size: 3rem;">"</span><%= testimonial.description %>
-                    <br><br><span style="font-size: 1.5rem;">-<%= testimonial.title%></span></h3>
-                </li>
-            <% end %>
-            </ul>
-        </div>
-    </div>
-</div>
-<div id="service-section">
-    <div id="service-heading">
-        <h2>Our Services</h2>
-    </div>
-    <div class="services row">
-        <div class="col-sm-3 each-service">
-            <h3>Traditional <br> Landscaping</h3>
-            <%= image_tag('/assets/originals/19') %>
-            <p>From sod, to irrigation systems, to vegetable gardens and tree plantings, we've got something
-            for even the most ardent outdoor traditionalist.
-            <%= link_to('Learn More', services_path) %></p>
-        </div>
-        <div class="col-sm-3 each-service">
-            <h3>Pergolas &<br> Arbors</h3>
-            <%= image_tag('/assets/originals/11') %>
-            <p>Nothing accents and makes your landscape truly inviting like custom woodwork in the form of arbors, trellis', and pergolas.
-            <%= link_to('Learn More', services_path) %></p>
-        </div>
-        <div class="col-sm-3 each-service">
-            <h3>Drought<br>Tolerant</h3>
-            <%= image_tag('/assets/originals/22') %>
-            <p>From native plants, to decomposed granite, dry creek beds and efficient irrigation.  Going low-maintenance has never meant
-            sacrificing beauty.
-            <%= link_to('Learn More', services_path) %></p>
-        </div>
-        <div class="col-sm-3 each-service">
-            <h3>Outdoor<br> Living</h3>
-            <%= image_tag('/assets/originals/16') %>
-            <p>The capstone of any outdoor project.  Firepits, paver walkways, paver patios, and built in BBQ areas make any outdoor area your 
-            go-to spot to entertain and unwind.
-            <%= link_to('Learn More', services_path) %>
-        </div>
-    </div>
-</div>
-<% if special_month? %>
-        <div class="special" style="background: <%= @special.color %>">
-            <h2><%= @special.month.capitalize %> Special</h2>
-            <h4><%= @special.description %></h4>
-        </div> 
-<% end %>
-<%= link_to(contact_path, id: 'contact') do %>
-    <div class="contact-link">
-            <h2>Take the Next Step Now:</h2>
-    </div>
-<% end %>

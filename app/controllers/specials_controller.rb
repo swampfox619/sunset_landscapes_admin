@@ -1,32 +1,26 @@
 class SpecialsController < ApplicationController
   before_action :set_special, only: [:show, :edit, :update, :destroy]
 
-  # GET /specials
-  # GET /specials.json
   def index
     @specials = Special.all
   end
 
-  # GET /specials/1
-  # GET /specials/1.json
+
   def show
   end
 
-  # GET /specials/new
   def new
     @special = Special.new
     @colors = ['Light Blue' => 'rgb(63, 169, 245)', 'Yellow' => 'rgb(255, 242, 0)', 'Orange' => 'rgb(247, 147, 30)',
     'Brown' => 'rgb(178, 115, 10)', 'Green' => 'rgb(75, 191, 30)']
   end
 
-  # GET /specials/1/edit
+
   def edit
       @colors = ['Light Blue' => 'rgb(63, 169, 245)', 'Yellow' => 'rgb(255, 242, 0)', 'Orange' => 'rgb(247, 147, 30)',
     'Brown' => 'rgb(178, 115, 10)', 'Green' => 'rgb(75, 191, 30)']
   end
 
-  # POST /specials
-  # POST /specials.json
   def create
     @special = Special.new(special_params)
 
@@ -41,8 +35,6 @@ class SpecialsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /specials/1
-  # PATCH/PUT /specials/1.json
   def update
     respond_to do |format|
       if @special.update(special_params)
@@ -55,8 +47,7 @@ class SpecialsController < ApplicationController
     end
   end
 
-  # DELETE /specials/1
-  # DELETE /specials/1.json
+
   def destroy
     @special.destroy
     respond_to do |format|
@@ -66,12 +57,10 @@ class SpecialsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_special
       @special = Special.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def special_params
       params.require(:special).permit(:color, :title, :description, :month)
     end

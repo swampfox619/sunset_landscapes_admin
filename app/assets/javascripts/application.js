@@ -14,8 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
-//= require lightbox
 //= require responsiveslides
+//= require ckeditor/init
 //= require_tree .
 
 // Transitions for testimonials

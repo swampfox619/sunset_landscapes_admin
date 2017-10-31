@@ -1,0 +1,14 @@
+<div class="content-container">
+    <div class="blog-container">
+        <h1>The Sunset Landscape Blog</h1>
+        <div class="blog-main">
+            <h2><%= Post.last.title %> | <%= Post.last.created_at.strftime('%b %d, %Y') %></h2>
+            <div class="blog-body"><%= raw(Post.last.body) %></div>
+        </div>
+    </div>
+    <%= link_to(contact_path, id: 'contact') do %>
+        <div class="contact-link">
+                <h2>Take the Next Step Now:</h2>
+        </div>
+    <% end %>
+</div>

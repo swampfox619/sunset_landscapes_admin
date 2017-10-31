@@ -49,6 +49,19 @@
             justify-content: center;
         }
     }
+    .blog-table-rows{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid black;
+        div{
+            padding: .5rem;
+            h1,h2,h3,h4{
+                font-size: 1rem;
+                font-weight: default;
+            }
+        }
+    }
 }
 
 .admin-show{
@@ -70,12 +83,33 @@
         }
     }
 }
-
+.blog-show{
+    width: 100%;
+    background: #dddddd;
+    padding: 1rem;
+    min-height: 600px;
+    #notice{
+        height: 50px;
+        color: black;
+    }
+    h2{
+        font-size: 1.25rem;
+    }
+    .content{
+        padding: 2rem 0;
+        div{
+            padding: 1rem 0;
+        }
+    }
+}
 .admin-edit{
     background: #dddddd;
     padding: 1rem;
 }
-
+.admin-new{
+    background: #dddddd;
+    padding: 1rem;
+}
 
 .form-field{
     padding-bottom: 1rem;

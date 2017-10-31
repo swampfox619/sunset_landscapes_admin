@@ -1,3 +1,5 @@
+//= require lightbox
+
 $(document).on("turbolinks:load", function(){
 
     // Tabs on Services Page

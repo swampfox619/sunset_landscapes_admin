@@ -1,0 +1,18 @@
+<%= form_for(@post) do |f| %>
+<div class="form-field">
+  <%= f.label :title %>
+  <div class="form-content">
+    <%= f.text_field :title, style: 'width: 500px' %>
+  </div>
+</div>
+<div class="form-field">
+  <%= f.label :body %>
+  <div class="form-content">
+    <%= f.cktext_area :body %>
+  </div>  
+</div>
+  <div class="form-content">
+    <%= f.button :submit, class: 'btn btn-primary' %>
+    <%= link_to 'Back', posts_path, class: 'btn btn-primary' %>
+  </div>
+<% end %>

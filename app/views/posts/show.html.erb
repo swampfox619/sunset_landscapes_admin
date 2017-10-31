@@ -1,0 +1,8 @@
+<div class="blog-show">
+  <h2><%= @post.title %> | <%= @post.created_at.strftime('%b %d, %Y') %> </h2>
+  <div><%= raw @post.body %></div>
+  <div>
+    <%= link_to 'Edit', edit_post_path(@post), class: 'btn btn-primary' %>
+    <%= link_to 'Back', posts_path, class: 'btn btn-primary' %>
+  </div>
+</div>
